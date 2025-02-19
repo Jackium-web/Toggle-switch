@@ -1,0 +1,69 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    transition: 1.4s;
+}
+
+.body-change-bg{
+    background: blue;
+}
+
+
+.outside_toggle{
+    width: 200px;
+    height: 100px;
+    background: #aca2a2;
+    border-radius: 50px;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+}
+
+.inside_toggle{
+    width: 50%;
+    height: 100%;
+    border-radius: 50%;
+    background: #1f1b1b;
+    box-shadow: 2px 2px 5px #000;
+    animation-name:animate_foward;
+    animation-duration:1.2s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    cursor: pointer;
+}
+
+.animate-back{
+    animation-name:animate-back;
+    animation-duration: 1.2s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes animate-back {
+    from{
+        transform: translateX(100%);
+    }
+    to{
+        transform: translateX(0%);
+        box-shadow: 2px 2px 5px #000;
+    }
+}
+
+@keyframes animate_foward {
+    from{
+        transform: translateX(0%);
+    }
+    to{
+        transform:translateX(100%);
+        box-shadow: -2px -2px 5px #000;
+    }
+}
